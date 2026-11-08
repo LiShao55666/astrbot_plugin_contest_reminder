@@ -3,9 +3,16 @@ display_name: 比赛提醒
 short_desc: 赛前自动提醒比赛
 desc: 牛客周赛 / Codeforces / AtCoder / LeetCode / CodeChef / 洛谷，开赛前自动 @全体成员 提醒，提前时间可调
 help: 选择要提醒的平台、填写发送群；Codeforces 等平台需要免费注册 clist.by 获取 API Key
-version: v1.2.0
+version: 1.2.0
 author: LiShao55666
 repo: https://github.com/LiShao55666/astrbot_plugin_contest_reminder
 astrbot_version: ">=4.0.0"
+social_link: https://github.com/LiShao55666
 support_platforms:
   - aiocqhttp
+标签:
+  - 比赛
+  - 提醒
+  - 竞赛
+  - contest
+  - reminder
