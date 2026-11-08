@@ -1,0 +1,112 @@
+{
+  "remind_before_hours": {
+    "description": "⏰ 开赛前多少小时提醒",
+    "type": "float",
+    "default": 2,
+    "hint": "每场比赛在开赛前 N 小时提醒一次，例如填 2 表示提前 2 小时。同一时间开赛的多场会合并成一条消息。"
+  },
+  "at_all": {
+    "description": "📢 提醒时 @全体成员",
+    "type": "bool",
+    "default": true,
+    "hint": "关闭后只发普通消息，不打扰群友。"
+  },
+  "groups": {
+    "description": "👥 发送到哪些群",
+    "type": "list",
+    "default": [],
+    "hint": "填会话 ID，格式：平台ID:GroupMessage:群号。\n例如：我的机器人:GroupMessage:123456789\n留空则不会发送（只写日志），配置好后再填。"
+  },
+  "include_nowcoder": {
+    "description": "🎯 牛客竞赛",
+    "type": "bool",
+    "default": true,
+    "hint": "抓取 ac.nowcoder.com 的比赛，不需要 API Key，开箱即用。"
+  },
+  "nowcoder_keywords": {
+    "description": "🔤 牛客只提醒哪些比赛",
+    "type": "list",
+    "default": [
+      "周赛"
+    ],
+    "hint": "按名称包含的关键词过滤。默认只提醒「周赛」；可以加「小白月赛」「挑战赛」等；留空 = 牛客所有比赛。"
+  },
+  "include_cf": {
+    "description": "🎯 Codeforces",
+    "type": "bool",
+    "default": false,
+    "hint": "开启后自动提醒 CF 比赛，Div1/Div2 同场次会合并成一条。需要下方 clist.by 凭据。"
+  },
+  "enable_atcoder": {
+    "description": "🎯 AtCoder",
+    "type": "bool",
+    "default": false,
+    "hint": "需要下方 clist.by 凭据。"
+  },
+  "enable_leetcode": {
+    "description": "🎯 LeetCode",
+    "type": "bool",
+    "default": false,
+    "hint": "需要下方 clist.by 凭据。"
+  },
+  "enable_codechef": {
+    "description": "🎯 CodeChef",
+    "type": "bool",
+    "default": false,
+    "hint": "需要下方 clist.by 凭据。"
+  },
+  "enable_luogu": {
+    "description": "🎯 洛谷",
+    "type": "bool",
+    "default": false,
+    "hint": "需要下方 clist.by 凭据。"
+  },
+  "extra_hosts": {
+    "description": "➕ 其他平台（高级）",
+    "type": "list",
+    "default": [],
+    "hint": "填写 clist.by 里的资源 host，例如 cses.fi、kattis.com。一般留空即可。"
+  },
+  "custom_contests": {
+    "description": "✏️ 自定义比赛",
+    "type": "text",
+    "default": "",
+    "hint": "clist 没收录的私赛、校赛可以在这里手动加。\n每行一场，格式：名称 | 链接 | 开赛时间 | 提前小时(可选)\n例如：\n校赛热身 | https://example.com/c/1 | 2026-11-20 19:00 | 1\n行首加 # 可临时关闭这一条；提前小时省略时使用全局值。"
+  },
+  "clist_username": {
+    "description": "🔑 clist.by 用户名",
+    "type": "string",
+    "default": "",
+    "hint": "开启 Codeforces / AtCoder 等平台后必须填写。免费注册 https://clist.by/ ，登录后在 https://clist.by/api/ 查看。"
+  },
+  "clist_api_key": {
+    "description": "🔑 clist.by API Key",
+    "type": "string",
+    "default": "",
+    "hint": "和用户名配套使用。注意不要泄露给别人。"
+  },
+  "max_items": {
+    "description": "🔧 单条消息最多几场",
+    "type": "int",
+    "default": 8,
+    "hint": "防止一次消息过长。"
+  },
+  "check_interval_seconds": {
+    "description": "🔧 检查间隔（秒）",
+    "type": "int",
+    "default": 60,
+    "hint": "每隔多少秒检查一次是否该提醒。60 秒意味着最多 1 分钟误差。"
+  },
+  "fetch_cache_minutes": {
+    "description": "🔧 赛程缓存（分钟）",
+    "type": "int",
+    "default": 10,
+    "hint": "多久重新拉一次赛程。clist.by 限流 10 次/分钟，10 分钟足够。"
+  },
+  "dry_run": {
+    "description": "🧪 演练模式",
+    "type": "bool",
+    "default": false,
+    "hint": "开启后只写日志、不往群里发消息，方便验证配置。"
+  }
+}
